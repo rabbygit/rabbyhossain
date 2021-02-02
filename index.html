@@ -119,9 +119,29 @@
 
     .welcome-section>p {
       font-style: italic;
-      color: var(--main-red);
+      /* color: var(--main-red); */
       font-size: 3rem;
       font-weight: 200;
+    }
+
+
+    .glow {
+      font-size: 80px;
+      color: #fff;
+      text-align: center;
+      -webkit-animation: glow 1s ease-in-out infinite alternate;
+      -moz-animation: glow 1s ease-in-out infinite alternate;
+      animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    @-webkit-keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+      }
+
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+      }
     }
 
     .projects-section {
@@ -302,8 +322,8 @@
   </nav>
 
   <section id="welcome-section" class="welcome-section">
-    <h1>I am Rabby Hossain</h1>
-    <p>A web developer working in node.js.</p>
+    <h1 class="glow">Rabby Hossain</h1>
+    <p class="glow">A positive and passionate software engineer</p>
   </section>
 
   <section id="projects" class="projects-section">
@@ -311,13 +331,42 @@
       Some of my projects
     </h2>
     <div class="projects-grid">
-      <a class="project project-tile" href="https://e-shop-134-frontend.herokuapp.com/" target="blank">
+      <a class="project project-tile" href="https://eshoppingmall.com.bd/" target="blank">
         <img class="project-image"
           src="https://www.reliablesoft.net/wp-content/uploads/2017/07/ecommerce-seo-homepage-example-1.jpg"
           alt="E-shop" />
         <p class="project-title">
           <span class="code">&lt;</span>
-          E-shop
+          E-shoppingmall
+          <span class="code">&#47;&gt;</span>
+        </p>
+      </a>
+      <a class="project project-tile" href="https://runnar.com.bd/" target="blank">
+        <img class="project-image"
+          src="https://uploads-ssl.webflow.com/5c18b63f60ec1a5d73f90676/5f0495d203f33a737c0e5dad_m-tribes-courier-software-sharing.png"
+          alt="Delivery & Courier" />
+        <p class="project-title">
+          <span class="code">&lt;</span>
+          Delivery & Courier
+          <span class="code">&#47;&gt;</span>
+        </p>
+      </a>
+      <a class="project project-tile" href="https://support24.com.bd/" target="blank">
+        <img class="project-image" src="https://soffront.com/wp-content/uploads/2020/03/what-is-crm-system-anodius.jpg"
+          alt="Poll" />
+        <p class="project-title">
+          <span class="code">&lt;</span>
+          CRM
+          <span class="code">&#47;&gt;</span>
+        </p>
+      </a>
+      <a class="project project-tile" href="https://vellycon.com/" target="blank">
+        <img class="project-image"
+          src="https://www.reliablesoft.net/wp-content/uploads/2017/07/ecommerce-seo-homepage-example-1.jpg"
+          alt="E-shop" />
+        <p class="project-title">
+          <span class="code">&lt;</span>
+          Vellycon
           <span class="code">&#47;&gt;</span>
         </p>
       </a>
@@ -340,27 +389,6 @@
           <span class="code">&#47;&gt;</span>
         </p>
       </a>
-      <a class="project project-tile" href="https://github.com/rabbygit/diugit" target="blank">
-        <img class="project-image"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQBUvvbc9AGblLvsHozr-7iaHvJUEjoTeQ5trZ3k-euLjx86mna"
-          alt="digit" />
-        <p class="project-title">
-          <span class="code">&lt;</span>
-          digit
-          <span class="code">&#47;&gt;</span>
-        </p>
-      </a>
-      <a class="project project-tile" href="https://github.com/rabbygit/ExpressCRUDApplication" target="blank">
-        <img class="project-image" src="https://i.ytimg.com/vi/3xRMUDC74Cw/maxresdefault.jpg" alt="project picture" />
-        <p class="project-title">
-          <span class="code">&lt;</span>
-          Express CRUD
-          <span class="code">&#47;&gt;</span>
-        </p>
-      </a>
-
-
-
     </div>
     <a href="https://codepen.io/rabbygit/pens/" class="btn btn-show-all" target="_blank">Show all<i
         class="fas fa-chevron-right"></i></a>
