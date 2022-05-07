@@ -6,306 +6,11 @@
     integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap" rel="stylesheet" />
-  <style type="text/css">
-    :root {
-      --main-white: #f0f0f0;
-      --main-red: #be3144;
-      --main-blue: #45567d;
-      --main-gray: #303841;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    /* box-sizing and font sizing */
-    *,
-    *::before,
-    *::after {
-      box-sizing: inherit;
-    }
-
-    html {
-      box-sizing: border-box;
-      font-size: 62.5%;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.8rem;
-      /* 18px */
-      font-weight: 400;
-      line-height: 1.4;
-      color: var(--main-white);
-    }
-
-    h1,
-    h2 {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 700;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 6rem;
-    }
-
-    h2 {
-      font-size: 4.2rem;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    a {
-      text-decoration: none;
-      color: var(--main-white);
-    }
-
-    img {
-      display: block;
-      width: 100%;
-    }
-
-    .nav {
-      background: var(--main-red);
-      display: flex;
-      justify-content: flex-end;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
-      z-index: 10;
-    }
-
-    .nav-list {
-      display: flex;
-      margin-right: 2rem;
-    }
-
-    @media (max-width: 28.75em) {
-      .nav {
-        justify-content: center;
-      }
-
-      .nav-list {
-        margin: 0 1rem;
-      }
-    }
-
-    .nav-list a {
-      display: block;
-      padding: 2rem;
-      font-size: 2.2rem;
-    }
-
-    .nav-list a:hover {
-      background: black;
-    }
-
-    .welcome-section {
-      background-color: #000;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      width: 100%;
-    }
-
-    .welcome-section>p {
-      font-style: italic;
-      /* color: var(--main-red); */
-      font-size: 3rem;
-      font-weight: 200;
-    }
-
-
-    .glow {
-      font-size: 80px;
-      color: #fff;
-      text-align: center;
-      -webkit-animation: glow 1s ease-in-out infinite alternate;
-      -moz-animation: glow 1s ease-in-out infinite alternate;
-      animation: glow 1s ease-in-out infinite alternate;
-    }
-
-    @-webkit-keyframes glow {
-      from {
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-      }
-
-      to {
-        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-      }
-    }
-
-    .projects-section {
-      text-align: center;
-      background: var(--main-gray);
-      padding: 10rem 2rem;
-    }
-
-    .projects-section-header {
-      border-bottom: 0.2rem solid var(--main-red);
-      max-width: 640px;
-      margin: 0 auto 6rem auto;
-    }
-
-    @media (max-width: 28.75em) {
-      .projects-section-header {
-        font-size: 4rem;
-      }
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      grid-gap: 4rem;
-      width: 100%;
-      max-width: 1280px;
-      margin: 0 auto;
-      margin-bottom: 6rem;
-    }
-
-    @media (max-width: 30.625em) {
-      .projects-section {
-        padding: 6rem 1rem;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .project {
-      background: var(--main-blue);
-      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-      border-radius: 2px;
-    }
-
-    .code {
-      color: var(--main-blue);
-      transition: color 0.3s ease-out;
-    }
-
-    .project:hover .code {
-      color: #ff7f50;
-    }
-
-    .project-title {
-      font-size: 2rem;
-      padding: 2rem 0.5rem;
-    }
-
-    .project-image {
-      height: calc(100% - 6.8rem);
-      width: 100%;
-      object-fit: cover;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 1rem 2rem;
-      border-radius: 2px;
-    }
-
-    .btn-show-all {
-      font-size: 2rem;
-      background: var(--main-blue);
-      transition: background 0.3s ease-out;
-    }
-
-    .btn-show-all:hover {
-      background: var(--main-red);
-    }
-
-    .btn-show-all>i {
-      margin-left: 10px;
-      transform: translateX(-2px);
-      transition: transform 0.3s ease-out;
-    }
-
-    .btn-show-all:hover>i {
-      transform: translateX(3px);
-    }
-
-    .contact-section {
-      background: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      width: 100%;
-      height: 80vh;
-      padding: 0 2rem;
-      text-align: center;
-    }
-
-    .contact-section-header>h2 {
-      font-size: 6rem;
-    }
-
-    .contact-section-header>p {
-      font-style: italic;
-    }
-
-    @media (max-width: 28.75em) {
-      .contact-section-header>h2 {
-        font-size: 4rem;
-      }
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      max-width: 980px;
-      margin-top: 4rem;
-      flex-wrap: wrap;
-    }
-
-    .contact-details {
-      font-size: 2.4rem;
-      text-shadow: 2px 2px 1px #1f1f1f;
-      transition: transform 0.3s ease-out;
-    }
-
-    .contact-details:hover {
-      transform: translateY(-5px);
-    }
-
-    footer {
-      font-weight: 300;
-      display: flex;
-      justify-content: space-evenly;
-      padding: 2rem;
-      background: var(--main-gray);
-      border-top: 4px solid var(--main-red);
-    }
-
-    footer>p {
-      margin: 2rem;
-    }
-
-    footer i {
-      vertical-align: middle;
-    }
-
-    @media (max-width: 28.75em) {
-      footer {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
+  <!-- Navbar Section -->
   <nav id="navbar" class="nav">
     <ul class="nav-list">
       <li>
@@ -321,17 +26,46 @@
     </ul>
   </nav>
 
+  <!-- Welcome Section -->
   <section id="welcome-section" class="welcome-section">
-    <h1 class="glow">Rabby Hossain</h1>
+    <h1 class="glow">Hi, I'm Rabby Hossain</h1>
     <p class="glow">A positive and passionate software engineer</p>
   </section>
 
+  <!-- Projects Section -->
   <section id="projects" class="projects-section">
     <h2 class="projects-section-header">
       Some of my projects
     </h2>
     <div class="projects-grid">
-      <a class="project project-tile" href="https://eshoppingmall.com.bd/" target="blank">
+      <a class="project project-tile" href="https://piktask.com/" target="blank">
+        <img class="project-image" src="./images/piktask.jpg" alt="Piktask" />
+        <p class="project-title">
+          <span class="code">&lt;</span>
+          Piktask
+          <span class="code">&#47;&gt;</span>
+        </p>
+      </a>
+
+      <a class="project project-tile" href="https://runnar.com.bd/" target="blank">
+        <img class="project-image" src="./images/brim.png" alt="Brim" />
+        <p class="project-title">
+          <span class="code">&lt;</span>
+          Brim
+          <span class="code">&#47;&gt;</span>
+        </p>
+      </a>
+
+      <a class="project project-tile" href="https://blog-134.herokuapp.com/explorer" target="blank">
+        <img class="project-image" src="./images/hr_management.png" alt="HR Management" />
+        <p class="project-title">
+          <span class="code">&lt;</span>
+          HR Management
+          <span class="code">&#47;&gt;</span>
+        </p>
+      </a>
+
+      <a class="project project-tile" href="https://mymarket.com.bd/" target="blank">
         <img class="project-image"
           src="https://www.reliablesoft.net/wp-content/uploads/2017/07/ecommerce-seo-homepage-example-1.jpg"
           alt="E-shop" />
@@ -341,7 +75,27 @@
           <span class="code">&#47;&gt;</span>
         </p>
       </a>
-      <a class="project project-tile" href="https://runnar.com.bd/" target="blank">
+
+      <a class="project project-tile" href="https://github.com/rabbygit/distributed_chat_system" target="blank">
+        <img class="project-image" src="./images/Hnet.com-image.png" alt="Chat System" />
+        <p class="project-title">
+          <span class="code">&lt;</span>
+          Chat System
+          <span class="code">&#47;&gt;</span>
+        </p>
+      </a>
+
+      <a class="project project-tile" href="https://github.com/rabbygit/Book-Store-graphql"
+        target="blank">
+        <img class="project-image" src="./images/graphql.png" alt="Poll" />
+        <p class="project-title">
+          <span class="code">&lt;</span>
+          Book Store(GraphQL)
+          <span class="code">&#47;&gt;</span>
+        </p>
+      </a>
+
+      <!-- <a class="project project-tile" href="https://runnar.com.bd/" target="blank">
         <img class="project-image"
           src="https://uploads-ssl.webflow.com/5c18b63f60ec1a5d73f90676/5f0495d203f33a737c0e5dad_m-tribes-courier-software-sharing.png"
           alt="Delivery & Courier" />
@@ -350,17 +104,9 @@
           Delivery & Courier
           <span class="code">&#47;&gt;</span>
         </p>
-      </a>
-      <a class="project project-tile" href="https://support24.com.bd/" target="blank">
-        <img class="project-image" src="https://soffront.com/wp-content/uploads/2020/03/what-is-crm-system-anodius.jpg"
-          alt="Poll" />
-        <p class="project-title">
-          <span class="code">&lt;</span>
-          CRM
-          <span class="code">&#47;&gt;</span>
-        </p>
-      </a>
-      <a class="project project-tile" href="https://vellycon.com/" target="blank">
+      </a> -->
+
+      <!-- <a class="project project-tile" href="https://vellycon.com/" target="blank">
         <img class="project-image"
           src="https://www.reliablesoft.net/wp-content/uploads/2017/07/ecommerce-seo-homepage-example-1.jpg"
           alt="E-shop" />
@@ -369,8 +115,9 @@
           Vellycon
           <span class="code">&#47;&gt;</span>
         </p>
-      </a>
-      <a class="project project-tile" href="https://blog-134.herokuapp.com/explorer" target="blank">
+      </a> -->
+
+      <!-- <a class="project project-tile" href="https://blog-134.herokuapp.com/explorer" target="blank">
         <img class="project-image"
           src="https://www.theminimalists.com/wp-content/uploads/2019/01/how-to-start-a-blog-in-2020.jpg"
           alt="Explorer-Blog" />
@@ -379,8 +126,9 @@
           Explorer-Blog
           <span class="code">&#47;&gt;</span>
         </p>
-      </a>
-      <a class="project project-tile" href="https://github.com/rabbygit/Creating-Poll-Express.js-ejs-engine"
+      </a> -->
+
+      <!-- <a class="project project-tile" href="https://github.com/rabbygit/Creating-Poll-Express.js-ejs-engine"
         target="blank">
         <img class="project-image" src="https://xoyondo.com/img/apoll_en2.png" alt="Poll" />
         <p class="project-title">
@@ -388,12 +136,13 @@
           Creating Poll(Express.js)
           <span class="code">&#47;&gt;</span>
         </p>
-      </a>
+      </a> -->
     </div>
     <a href="https://codepen.io/rabbygit/pens/" class="btn btn-show-all" target="_blank">Show all<i
         class="fas fa-chevron-right"></i></a>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact" class="contact-section">
     <div class="contact-section-header">
       <h2>Let's work together...</h2>
@@ -412,6 +161,7 @@
     </div>
   </section>
 
+  <!-- Footer Section -->
   <footer>
     <p>
       &copy; Created by Rabby Hossain.
