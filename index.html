@@ -1,171 +1,236 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="main.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rabby Hossain — Software Engineer</title>
+  <meta name="description" content="Rabby Hossain is a positive and passionate software engineer. See selected projects and get in touch." />
+  <meta name="theme-color" content="#0b0d12" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rabby Hossain — Software Engineer" />
+  <meta property="og:description" content="A positive and passionate software engineer. Selected projects and contact details." />
+  <meta property="og:url" content="https://rabbygit.github.io/rabbyhossain/" />
+  <meta property="og:image" content="https://rabbygit.github.io/rabbyhossain/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Rabby Hossain, Software Engineer" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://rabbygit.github.io/rabbyhossain/" />
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f43f5e'/%3E%3Cstop offset='1' stop-color='%23fb923c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='white'%3ERH%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="main.css" />
+
+  <script src="theme.js"></script>
+  <script src="main.js" defer></script>
 </head>
 
 <body>
+  <!-- Icon sprite: each icon is reused below via <use href="#id"> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-github" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+    </symbol>
+    <symbol id="i-x" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.4l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.6l5.24 6.93zm-1.29 19.5h2.04L6.49 3.24H4.3z" />
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <path d="m22 7-10 6L2 7" />
+      </g>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        d="M7 17 17 7M8 7h9v9" />
+    </symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="4" />
+        <path
+          d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+      </g>
+    </symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <!-- Navbar Section -->
-  <nav id="navbar" class="nav">
-    <ul class="nav-list">
-      <li>
-        <a href="#welcome-section">About
-        </a>
-      </li>
-      <li>
-        <a href="#projects">Work</a>
-      </li>
-      <li>
-        <a href="#contact">Contact</a>
-      </li>
-    </ul>
-  </nav>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main">
+      <a class="brand" href="#welcome-section">Rabby<span>.</span></a>
+      <div class="nav-actions">
+        <ul class="nav-list">
+          <li><a href="#welcome-section">About</a></li>
+          <li><a href="#projects">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark and light mode"
+          title="Toggle dark and light mode">
+          <svg class="icon icon-sun"><use href="#i-sun" /></svg>
+          <svg class="icon icon-moon"><use href="#i-moon" /></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
 
-  <!-- Welcome Section -->
-  <section id="welcome-section" class="welcome-section">
-    <h1 class="glow">Hi, I'm Rabby Hossain</h1>
-    <p class="glow">A positive and passionate software engineer</p>
-  </section>
+  <main id="main">
+    <!-- Welcome Section -->
+    <section id="welcome-section" class="welcome-section">
+      <div class="container hero">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Software Engineer</p>
+        <h1>Hi, I'm <span class="gradient-text">Rabby Hossain</span></h1>
+        <p class="lead">A positive and passionate software engineer.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">View my work</a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+    </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects-section">
-    <h2 class="projects-section-header">
-      Some of my projects
-    </h2>
-    <div class="projects-grid">
-      <a class="project project-tile" href="https://piktask.com/" target="blank">
-        <img class="project-image" src="./images/piktask.jpg" alt="Piktask" />
-        <p class="project-title">
-          <span class="code">&lt;</span>
-          Piktask
-          <span class="code">&#47;&gt;</span>
-        </p>
-      </a>
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Selected work</p>
+          <h2>Some of my projects</h2>
+        </div>
 
-      <a class="project project-tile" href="https://runnar.com.bd/" target="blank">
-        <img class="project-image" src="./images/brim.png" alt="Brim" />
-        <p class="project-title">
-          <span class="code">&lt;</span>
-          Brim
-          <span class="code">&#47;&gt;</span>
-        </p>
-      </a>
+        <ul class="projects-grid">
+          <li class="reveal">
+            <a class="project" href="https://piktask.com/" target="_blank" rel="noopener noreferrer">
+              <div class="project-media">
+                <img src="./images/piktask.jpg" alt="Piktask website preview" width="800" height="500"
+                  loading="lazy" />
+              </div>
+              <div class="project-body">
+                <h3 class="project-title"><span class="code">&lt;</span>Piktask<span class="code">/&gt;</span></h3>
+                <span class="project-link">Live site <svg class="icon"><use href="#i-arrow" /></svg></span>
+              </div>
+            </a>
+          </li>
 
-      <a class="project project-tile" href="https://blog-134.herokuapp.com/explorer" target="blank">
-        <img class="project-image" src="./images/hr_management.png" alt="HR Management" />
-        <p class="project-title">
-          <span class="code">&lt;</span>
-          HR Management
-          <span class="code">&#47;&gt;</span>
-        </p>
-      </a>
+          <li class="reveal">
+            <a class="project" href="https://runnar.com.bd/" target="_blank" rel="noopener noreferrer">
+              <div class="project-media">
+                <img src="./images/brim.png" alt="Brim mobile app screens" width="348" height="302" loading="lazy" />
+              </div>
+              <div class="project-body">
+                <h3 class="project-title"><span class="code">&lt;</span>Brim<span class="code">/&gt;</span></h3>
+                <span class="project-link">Live site <svg class="icon"><use href="#i-arrow" /></svg></span>
+              </div>
+            </a>
+          </li>
 
-      <a class="project project-tile" href="https://mymarket.com.bd/" target="blank">
-        <img class="project-image"
-          src="https://www.reliablesoft.net/wp-content/uploads/2017/07/ecommerce-seo-homepage-example-1.jpg"
-          alt="E-shop" />
-        <p class="project-title">
-          <span class="code">&lt;</span>
-          E-shoppingmall
-          <span class="code">&#47;&gt;</span>
-        </p>
-      </a>
+          <li class="reveal">
+            <a class="project" href="https://blog-134.herokuapp.com/explorer" target="_blank" rel="noopener noreferrer">
+              <div class="project-media">
+                <img src="./images/hr_management.png" alt="HRM Schedular welcome screen" width="366" height="186"
+                  loading="lazy" />
+              </div>
+              <div class="project-body">
+                <h3 class="project-title"><span class="code">&lt;</span>HR Management<span class="code">/&gt;</span>
+                </h3>
+                <span class="project-link">Live site <svg class="icon"><use href="#i-arrow" /></svg></span>
+              </div>
+            </a>
+          </li>
 
-      <a class="project project-tile" href="https://github.com/rabbygit/distributed_chat_system" target="blank">
-        <img class="project-image" src="./images/Hnet.com-image.png" alt="Chat System" />
-        <p class="project-title">
-          <span class="code">&lt;</span>
-          Chat System
-          <span class="code">&#47;&gt;</span>
-        </p>
-      </a>
+          <li class="reveal">
+            <a class="project" href="https://mymarket.com.bd/" target="_blank" rel="noopener noreferrer">
+              <div class="project-media">
+                <img src="https://www.reliablesoft.net/wp-content/uploads/2017/07/ecommerce-seo-homepage-example-1.jpg"
+                  alt="E-commerce homepage example" loading="lazy" />
+              </div>
+              <div class="project-body">
+                <h3 class="project-title"><span class="code">&lt;</span>E-shoppingmall<span class="code">/&gt;</span>
+                </h3>
+                <span class="project-link">Live site <svg class="icon"><use href="#i-arrow" /></svg></span>
+              </div>
+            </a>
+          </li>
 
-      <a class="project project-tile" href="https://github.com/rabbygit/Book-Store-graphql"
-        target="blank">
-        <img class="project-image" src="./images/graphql.png" alt="Poll" />
-        <p class="project-title">
-          <span class="code">&lt;</span>
-          Book Store(GraphQL)
-          <span class="code">&#47;&gt;</span>
-        </p>
-      </a>
+          <li class="reveal">
+            <a class="project" href="https://github.com/rabbygit/distributed_chat_system" target="_blank"
+              rel="noopener noreferrer">
+              <div class="project-media">
+                <img src="./images/Hnet.com-image.png" alt="Node.js and Socket.io logos" width="348" height="175"
+                  loading="lazy" />
+              </div>
+              <div class="project-body">
+                <h3 class="project-title"><span class="code">&lt;</span>Chat System<span class="code">/&gt;</span></h3>
+                <span class="project-link">GitHub <svg class="icon"><use href="#i-arrow" /></svg></span>
+              </div>
+            </a>
+          </li>
 
-      <!-- <a class="project project-tile" href="https://runnar.com.bd/" target="blank">
-        <img class="project-image"
-          src="https://uploads-ssl.webflow.com/5c18b63f60ec1a5d73f90676/5f0495d203f33a737c0e5dad_m-tribes-courier-software-sharing.png"
-          alt="Delivery & Courier" />
-        <p class="project-title">
-          <span class="code">&lt;</span>
-          Delivery & Courier
-          <span class="code">&#47;&gt;</span>
-        </p>
-      </a> -->
+          <li class="reveal">
+            <a class="project" href="https://github.com/rabbygit/Book-Store-graphql" target="_blank"
+              rel="noopener noreferrer">
+              <div class="project-media">
+                <img src="./images/graphql.png" alt="GraphQL logo" width="288" height="288" loading="lazy" />
+              </div>
+              <div class="project-body">
+                <h3 class="project-title"><span class="code">&lt;</span>Book Store (GraphQL)<span
+                    class="code">/&gt;</span></h3>
+                <span class="project-link">GitHub <svg class="icon"><use href="#i-arrow" /></svg></span>
+              </div>
+            </a>
+          </li>
+        </ul>
 
-      <!-- <a class="project project-tile" href="https://vellycon.com/" target="blank">
-        <img class="project-image"
-          src="https://www.reliablesoft.net/wp-content/uploads/2017/07/ecommerce-seo-homepage-example-1.jpg"
-          alt="E-shop" />
-        <p class="project-title">
-          <span class="code">&lt;</span>
-          Vellycon
-          <span class="code">&#47;&gt;</span>
-        </p>
-      </a> -->
+        <div class="show-all reveal">
+          <a href="https://codepen.io/rabbygit/pens/" class="btn btn-ghost" target="_blank"
+            rel="noopener noreferrer">Show all on CodePen <svg class="icon"><use href="#i-arrow" /></svg></a>
+        </div>
+      </div>
+    </section>
 
-      <!-- <a class="project project-tile" href="https://blog-134.herokuapp.com/explorer" target="blank">
-        <img class="project-image"
-          src="https://www.theminimalists.com/wp-content/uploads/2019/01/how-to-start-a-blog-in-2020.jpg"
-          alt="Explorer-Blog" />
-        <p class="project-title">
-          <span class="code">&lt;</span>
-          Explorer-Blog
-          <span class="code">&#47;&gt;</span>
-        </p>
-      </a> -->
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container contact-card reveal">
+        <p class="eyebrow">Contact</p>
+        <h2>Let's work together</h2>
+        <p class="lead">Have a project in mind? Let's grab a coffee and talk.</p>
 
-      <!-- <a class="project project-tile" href="https://github.com/rabbygit/Creating-Poll-Express.js-ejs-engine"
-        target="blank">
-        <img class="project-image" src="https://xoyondo.com/img/apoll_en2.png" alt="Poll" />
-        <p class="project-title">
-          <span class="code">&lt;</span>
-          Creating Poll(Express.js)
-          <span class="code">&#47;&gt;</span>
-        </p>
-      </a> -->
-    </div>
-    <a href="https://codepen.io/rabbygit/pens/" class="btn btn-show-all" target="_blank">Show all<i
-        class="fas fa-chevron-right"></i></a>
-  </section>
+        <ul class="contact-links">
+          <li>
+            <a href="mailto:rabbyhossain482@gmail.com" class="btn btn-primary">
+              <svg class="icon"><use href="#i-mail" /></svg> Send a mail</a>
+          </li>
+        </ul>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section">
-    <div class="contact-section-header">
-      <h2>Let's work together...</h2>
-      <p>Can we take a coffee?</p>
-    </div>
-
-    <div class="contact-links">
-      <a href="https://web.facebook.com/sopnobaj.ami" target="_blank" class="btn contact-details"><i
-          class="fab fa-facebook-square"></i> Facebook</a>
-      <a href="https://github.com/rabbygit" target="_blank" class="btn contact-details" id="profile-link"><i
-          class="fab fa-github"></i> GitHub</a>
-      <a href="https://twitter.com/Rabbyho73263214" target="_blank" class="btn contact-details"><i
-          class="fab fa-twitter"></i> Twitter</a>
-      <a href="mailto:rabbyhossain482@gmail.com" class="btn   contact-details"><i class="fas fa-at"></i> Send a mail</a>
-      <a href="tel:+8801757047579" class="btn contact-details"><i class="fas fa-mobile-alt"></i> Call me</a>
-    </div>
-  </section>
+        <ul class="socials">
+          <li>
+            <a href="https://github.com/rabbygit" target="_blank" rel="noopener noreferrer" id="profile-link"
+              aria-label="GitHub"><svg class="icon"><use href="#i-github" /></svg></a>
+          </li>
+          <li>
+            <a href="https://twitter.com/Rabbyho73263214" target="_blank" rel="noopener noreferrer"
+              aria-label="X (Twitter)"><svg class="icon"><use href="#i-x" /></svg></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer Section -->
-  <footer>
-    <p>
-      &copy; Created by Rabby Hossain.
-    </p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; Designed &amp; built by Rabby Hossain.</p>
+      <a href="#welcome-section">Back to top ↑</a>
+    </div>
   </footer>
 </body>
 
