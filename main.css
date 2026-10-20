@@ -342,6 +342,143 @@ img {
   margin-top: 2.25rem;
 }
 
+/* About Section */
+.about-section {
+  padding: 6rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 56em) {
+  .about-grid {
+    grid-template-columns: 1.1fr 1fr;
+    align-items: start;
+  }
+}
+
+.about-text h2 {
+  margin-bottom: 1.5rem;
+}
+
+.about-text p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.about-text p + p {
+  margin-top: 1rem;
+}
+
+.about-text strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.about-text a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-2);
+  text-underline-offset: 3px;
+}
+
+.about-side {
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* Current role card, tinted with the accent to stand out */
+.role-card {
+  padding: 1.5rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent 60%),
+    var(--surface);
+}
+
+.role-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+}
+
+.role-card h3 {
+  margin-top: 0.6rem;
+  font-size: 1.3rem;
+}
+
+.role-team {
+  margin-top: 0.25rem;
+  color: var(--muted);
+}
+
+.role-list {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 1rem;
+  font-size: 0.93rem;
+}
+
+.role-list li {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.role-list li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  margin-top: 0.6em;
+  border-radius: 50%;
+  background: var(--gradient);
+}
+
+.skills {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.skills h3 {
+  margin-bottom: 0.6rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tags li {
+  padding: 0.2rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent-2) 8%, transparent);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
 /* Projects Section */
 .projects-section {
   padding: 6rem 0;
@@ -397,10 +534,78 @@ img {
 
 .project-body {
   display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.1rem 1.25rem 1.25rem;
+}
+
+.project-head {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.1rem 1.25rem;
+}
+
+.project-desc {
+  font-size: 0.93rem;
+  color: var(--muted);
+}
+
+.project-body .eyebrow {
+  margin-bottom: -0.25rem;
+}
+
+/* Featured card spans the full row; image beside text on wide screens */
+.project-featured {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 48em) {
+  .project-featured .project {
+    flex-direction: row;
+  }
+
+  .project-featured .project-media {
+    flex: 0 0 45%;
+    aspect-ratio: auto;
+    min-height: 260px;
+  }
+
+  .project-featured .project-body {
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .project-featured .project-title {
+    font-size: 1.5rem;
+  }
+
+  .project-featured .project-desc {
+    font-size: 1rem;
+  }
+}
+
+/* Code snippet in place of an image */
+.project-media--code {
+  display: grid;
+  place-items: center;
+  background: #0f1320;
+}
+
+.project-media--code pre {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: #e8eaf0;
+  transition: transform 0.4s ease;
+}
+
+.project-media--code .c {
+  color: #7d8799;
+}
+
+.project:hover .project-media--code pre {
+  transform: scale(1.04);
 }
 
 .project-title {
@@ -516,6 +721,7 @@ img {
     gap: 0.25rem;
   }
 
+  .about-section,
   .projects-section,
   .contact-section {
     padding: 4.5rem 0;
