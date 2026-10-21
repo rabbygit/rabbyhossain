@@ -71,7 +71,8 @@ h2 {
   font-size: clamp(2rem, 4.5vw, 3rem);
 }
 
-ul {
+ul,
+ol {
   list-style: none;
 }
 
@@ -356,8 +357,9 @@ img {
 
 @media (min-width: 56em) {
   .about-grid {
-    grid-template-columns: 1.1fr 1fr;
-    align-items: start;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 4rem;
+    align-items: center;
   }
 }
 
@@ -386,42 +388,6 @@ img {
   text-underline-offset: 3px;
 }
 
-.about-side {
-  display: grid;
-  gap: 1.25rem;
-}
-
-/* Current role card, tinted with the accent to stand out */
-.role-card {
-  padding: 1.5rem;
-  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
-  border-radius: var(--radius);
-  background:
-    linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent 60%),
-    var(--surface);
-}
-
-.role-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent-2);
-}
-
-.role-card h3 {
-  margin-top: 0.6rem;
-  font-size: 1.3rem;
-}
-
-.role-team {
-  margin-top: 0.25rem;
-  color: var(--muted);
-}
-
 .role-list {
   display: grid;
   gap: 0.45rem;
@@ -444,16 +410,72 @@ img {
   background: var(--gradient);
 }
 
-.skills {
+/* Stat tiles beside the About text */
+.stats {
   display: grid;
+  gap: 1rem;
+}
+
+.stats li {
+  display: flex;
+  align-items: center;
   gap: 1.25rem;
-  padding: 1.5rem;
+  padding: 1.25rem 1.5rem;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--surface);
 }
 
-.skills h3 {
+.stat-value {
+  flex: 0 0 5.75rem;
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Full-width skills grid below the About text */
+.skills-heading {
+  margin: 4.5rem 0 1.5rem;
+  font-size: 1.5rem;
+}
+
+/* 1, 2 or 4 columns so the 8 groups always fill complete rows */
+.skills {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 34em) {
+  .skills {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64em) {
+  .skills {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.skills > li {
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.skills h4 {
   margin-bottom: 0.6rem;
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 0.78rem;
@@ -477,6 +499,129 @@ img {
   font-size: 0.8rem;
   font-weight: 500;
   color: var(--text);
+}
+
+/* Experience Section */
+.experience-section {
+  padding: 6rem 0;
+  border-top: 1px solid var(--border);
+}
+
+/* Vertical line on the left, with one dot per company */
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 1.25rem;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 2rem;
+  bottom: 2rem;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: calc(-2rem + 2px);
+  top: 1.9rem;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--muted);
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+.timeline-item.is-current {
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent 60%),
+    var(--surface);
+}
+
+.timeline-item.is-current::before {
+  border-color: transparent;
+  background: var(--gradient);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+@media (min-width: 48em) {
+  .timeline-item {
+    grid-template-columns: 220px 1fr;
+    gap: 2rem;
+    padding: 1.75rem 2rem;
+  }
+}
+
+.timeline-company h3 {
+  font-size: 1.25rem;
+}
+
+.timeline-meta {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.timeline-roles {
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* Earlier roles at the same company sit below a dashed divider */
+.timeline-roles > li + li {
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--border);
+}
+
+.timeline-roles h4 {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.role-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.badge {
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: var(--gradient);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.timeline-dates {
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.role-team {
+  margin-top: 0.75rem;
+  font-weight: 500;
 }
 
 /* Projects Section */
@@ -713,8 +858,13 @@ img {
     font-size: 1.15rem;
   }
 
+  .nav-list {
+    gap: 0;
+  }
+
   .nav-list a {
-    padding: 0.45rem 0.5rem;
+    padding: 0.4rem 0.45rem;
+    font-size: 0.85rem;
   }
 
   .nav-actions {
@@ -722,6 +872,7 @@ img {
   }
 
   .about-section,
+  .experience-section,
   .projects-section,
   .contact-section {
     padding: 4.5rem 0;
@@ -744,6 +895,17 @@ img {
 .js .reveal.is-visible {
   opacity: 1;
   transform: none;
+}
+
+/* Very small phones: drop the logo so all nav links and the toggle fit */
+@media (max-width: 24em) {
+  .brand {
+    display: none;
+  }
+
+  .nav {
+    justify-content: flex-end;
+  }
 }
 
 /* Animations */

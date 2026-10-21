@@ -7,9 +7,11 @@
     return;
   }
 
-  // Stagger project cards so each row ripples in left to right
-  document.querySelectorAll('.projects-grid .reveal').forEach(function (el, i) {
-    el.style.transitionDelay = (i % 3) * 80 + 'ms';
+  // Stagger cards in each grid so every row ripples in left to right
+  document.querySelectorAll('.projects-grid, .skills').forEach(function (grid) {
+    grid.querySelectorAll(':scope > .reveal').forEach(function (el, i) {
+      el.style.transitionDelay = (i % 4) * 80 + 'ms';
+    });
   });
 
   var observer = new IntersectionObserver(function (entries) {
